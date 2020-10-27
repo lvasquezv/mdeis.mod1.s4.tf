@@ -6,8 +6,12 @@
           <option name="url" value="https://github.com/lvasquezv/mdeis.mod1.s4.t8.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/lvasquezv/mdeis.mod1.s4.t9.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="D:\drive\Maestria\DEIS\M01\S4" />
+    <option name="cloneParentDir" value="C:\Users\USUARIO\Documents\GitHub" />
   </component>
 </application>
