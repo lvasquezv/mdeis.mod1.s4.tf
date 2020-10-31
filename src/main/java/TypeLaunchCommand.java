@@ -1,8 +1,8 @@
-public class LaunchCommand {
+public class TypeLaunchCommand {
    private TypePlayerNameCommand playerName;
    private TypeNumberOfPineKnockdownsCommand numberOfPineKnockdowns;
 
-    public LaunchCommand(TypePlayerNameCommand playerName, TypeNumberOfPineKnockdownsCommand numberOfPineKnockdowns) {
+    public TypeLaunchCommand(TypePlayerNameCommand playerName, TypeNumberOfPineKnockdownsCommand numberOfPineKnockdowns) {
         this.playerName = playerName;
         this.numberOfPineKnockdowns = numberOfPineKnockdowns;
     }

@@ -1,4 +1,4 @@
 public interface ScoreboardGame {
-    public void applyCommand(LaunchCommand comando);
+    public void applyCommand(TypeLaunchCommand comando);
     public void showResult();
 }
