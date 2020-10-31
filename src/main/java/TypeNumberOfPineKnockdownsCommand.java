@@ -1,15 +1,15 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class TypeNumberOfPineKnockdowns {
+public class TypeNumberOfPineKnockdownsCommand {
     private String valor;
 
-    public TypeNumberOfPineKnockdowns(String valor) {
+    public TypeNumberOfPineKnockdownsCommand(String valor) {
         this.valor = valor;
     }
-   public static TypeNumberOfPineKnockdowns FromValor(String valor) throws Exception {
+   public static TypeNumberOfPineKnockdownsCommand FromValor(String valor) throws Exception {
        CheckValidity(valor);
-       return new TypeNumberOfPineKnockdowns(valor);
+       return new TypeNumberOfPineKnockdownsCommand(valor);
    }
     private static void CheckValidity(String valor) throws Exception {
         if (valor==null)

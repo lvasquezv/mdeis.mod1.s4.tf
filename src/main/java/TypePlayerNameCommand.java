@@ -1,15 +1,12 @@
-import java.util.Arrays;
-import java.util.List;
-
-public class TypePlayerName {
+public class TypePlayerNameCommand {
     private String valor;
 
-    public TypePlayerName(String valor) {
+    public TypePlayerNameCommand(String valor) {
         this.valor = valor;
     }
-    public static TypePlayerName FromValor(String valor) throws Exception {
+    public static TypePlayerNameCommand FromValor(String valor) throws Exception {
         CheckValidity(valor);
-        return new TypePlayerName(valor);
+        return new TypePlayerNameCommand(valor);
     }
     private static void CheckValidity(String valor) throws Exception {
         if (valor==null)

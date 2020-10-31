@@ -1,25 +1,25 @@
 public class LaunchCommand {
-   private TypePlayerName playerName;
-   private TypeNumberOfPineKnockdowns numberOfPineKnockdowns;
+   private TypePlayerNameCommand playerName;
+   private TypeNumberOfPineKnockdownsCommand numberOfPineKnockdowns;
 
-    public LaunchCommand(TypePlayerName playerName, TypeNumberOfPineKnockdowns numberOfPineKnockdowns) {
+    public LaunchCommand(TypePlayerNameCommand playerName, TypeNumberOfPineKnockdownsCommand numberOfPineKnockdowns) {
         this.playerName = playerName;
         this.numberOfPineKnockdowns = numberOfPineKnockdowns;
     }
 
-    public TypeNumberOfPineKnockdowns getNumberOfPineKnockdowns() {
+    public TypeNumberOfPineKnockdownsCommand getNumberOfPineKnockdowns() {
         return numberOfPineKnockdowns;
     }
 
-    public void setNumberOfPineKnockdowns(TypeNumberOfPineKnockdowns numberOfPineKnockdowns) {
+    public void setNumberOfPineKnockdowns(TypeNumberOfPineKnockdownsCommand numberOfPineKnockdowns) {
         this.numberOfPineKnockdowns = numberOfPineKnockdowns;
     }
 
-    public TypePlayerName getPlayerName() {
+    public TypePlayerNameCommand getPlayerName() {
         return playerName;
     }
 
-    public void setPlayerName(TypePlayerName playerName) {
+    public void setPlayerName(TypePlayerNameCommand playerName) {
         this.playerName = playerName;
     }
 }
