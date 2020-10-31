@@ -1,6 +1,7 @@
+import java.util.List;
+
 public class ScoreboardPlayerItem {
-    private TypeNumberOfPineKnockdownsBoard numberOfPineKnockdownsBoard01;
-    private TypeNumberOfPineKnockdownsBoard numberOfPineKnockdownsBoard02;
+    private List<TypeNumberOfPineKnockdownsBoard> numberOfPineKnockdownsBoards;
     private int cumulativeScore;
 
 }
