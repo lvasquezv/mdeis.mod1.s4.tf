@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameClient {
+public class InvokerGameClient {
 
    public static void main(String[] args) {
       ScoreboardGame scoreboardGame = new ScoreboardGame10();
-      GameClient gameClient = new GameClient();
-      List<LaunchCommand> launchCommands = gameClient.readCommands("C:\\archivo.txt");
+      InvokerGameClient invokerGameClient = new InvokerGameClient();
+      List<LaunchCommand> launchCommands = invokerGameClient.readCommands("C:\\archivo.txt");
       for (LaunchCommand launchCommand : launchCommands) {
          scoreboardGame.applyCommand(launchCommand);
       }
