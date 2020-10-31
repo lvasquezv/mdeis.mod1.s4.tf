@@ -10,8 +10,16 @@ public class ScoreboardGame10 implements ScoreboardGame{
 
 
 
-    public void applyCommand(LaunchCommand comando){
-
+    public void applyCommand(TypeLaunchCommand typeLaunchCommand){
+        boolean existe = false;
+        for (ScoreboardPlayer scoreboardPlayer:scoreboardPlayers
+             ) {
+            if (scoreboardPlayer.playerName.equals(typeLaunchCommand.getPlayerName())){
+                existe = true;
+                LaunchCommad launchCommad = new LaunchCommandGame10();
+                launchCommad.execute(typeLaunchCommand,scoreboardPlayer);
+            }
+        }
     }
     public void showResult(){
 
