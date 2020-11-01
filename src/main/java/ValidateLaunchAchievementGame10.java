@@ -1,5 +1,7 @@
+import java.util.List;
+
 public class ValidateLaunchAchievementGame10 implements ValidateLaunchAchievement{
-    public boolean validateTypeLaunchCommand(ScoreboardGame scoreboardGame, TypeLaunchCommand typeLaunchCommand) {
+    public boolean validateTypeLaunchCommand(List<TypeLaunchCommand> typeLaunchCommandList, TypeLaunchCommand typeLaunchCommand) {
         return false;
     }
 }

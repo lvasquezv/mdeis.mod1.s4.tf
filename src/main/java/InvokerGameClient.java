@@ -11,7 +11,15 @@ public class InvokerGameClient {
       List<TypeLaunchCommand> launchCommands = invokerGameClient.readCommands("D:\\archivo.txt");
 
       ScoreboardGame scoreboardGame = new ScoreboardGame10();
+      ValidateLaunchAchievement validateLaunchAchievementGame10 = new ValidateLaunchAchievementGame10();
+      List<TypeLaunchCommand> typeLaunchCommandList = new ArrayList<TypeLaunchCommand>();
       for (TypeLaunchCommand launchCommand : launchCommands) {
+
+         if (validateLaunchAchievementGame10.validateTypeLaunchCommand(typeLaunchCommandList, launchCommand)){
+
+            typeLaunchCommandList.add(launchCommand);
+         }
+
          if(!scoreboardGame.applyCommand(launchCommand)){
             System.out.println("Error al aplicar el comando:  " + launchCommand.toString() );
             return;

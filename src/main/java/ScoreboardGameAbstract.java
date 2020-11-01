@@ -1,7 +1,6 @@
-import java.util.ArrayList;
 import java.util.List;
 
-public class ScoreboardGame10 implements ScoreboardGame{
+public abstract class ScoreboardGameAbstract implements ScoreboardGame{
     private List<ScoreboardPlayer> scoreboardPlayerList;
     private UpdateScorePlayer updateScorePlayer;
     private ValidateLaunchAchievement validateLaunchAchievement;
@@ -10,33 +9,27 @@ public class ScoreboardGame10 implements ScoreboardGame{
     private LaunchCommandState launchCommandState;
     private List<TypeLaunchCommand> typeLaunchCommandList;
 
-    public ScoreboardGame10() {
-        this.scoreboardPlayerList = new ArrayList<ScoreboardPlayer>();
-        this.updateScorePlayer = new UpdateScorePlayerGame10();
-        this.validateLaunchAchievement = new ValidateLaunchAchievementGame10();
-        this.typeLaunchCommandState = new TypeLaunchCommandStateNewPlayer();
-        this.launchCommandState = new LaunchCommandStateGame10();
-    }
-
-
     public boolean applyCommand(TypeLaunchCommand typeLaunchCommand){
-        //this.typeLaunchCommandState = typeLaunchCommand;
-        boolean existe = false;
         if (validateLaunchAchievement.validateTypeLaunchCommand(this.typeLaunchCommandList,typeLaunchCommand)) {
+            boolean exist = false;
             for (ScoreboardPlayer scoreboardPlayer: scoreboardPlayerList                 ) {
                 if (typeLaunchCommand.getPlayerName().equals(scoreboardPlayer.getPlayerName())){
                     createUpdatePlayerFrame.createFrame(scoreboardPlayer, typeLaunchCommand);
                     updateScorePlayer.process(scoreboardPlayer);
+                    exist = true;
                     break;
                 }
             }
+            if(!exist) {
+               addNewPlayer(typeLaunchCommand);
+            }
         }else{ return false;}
-
-        return true;
+        return true                ;
     }
-    public void showResult(){
-
+    public abstract void addNewPlayer(TypeLaunchCommand typeLaunchCommand);
+    public void showResult(PrinterPlayerFrame printer){
+        for (ScoreboardPlayer scoreboardPlayer: scoreboardPlayerList ){
+            printer.printer(scoreboardPlayer);
+        }
     }
-
-
 }
