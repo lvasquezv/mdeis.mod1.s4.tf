@@ -10,6 +10,7 @@ public class ScoreboardGame10 extends ScoreboardGameAbstract{
     private LaunchCommandState launchCommandState;
     private List<TypeLaunchCommand> typeLaunchCommandList;
 
+
     public ScoreboardGame10() {
         this.scoreboardPlayerList = new ArrayList<ScoreboardPlayer>();
         this.updateScorePlayer = new UpdateScorePlayerGame10();
