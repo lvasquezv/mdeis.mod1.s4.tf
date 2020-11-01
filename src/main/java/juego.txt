@@ -1,0 +1,3 @@
+pedro 7
+pedro 3
+carlos 10
