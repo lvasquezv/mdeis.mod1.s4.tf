@@ -1,6 +1,6 @@
 import java.util.List;
 
-public abstract class ScoreboardGameAbstract implements ScoreboardGame{
+public abstract class ScoreboardGameAbstract {
     private List<ScoreboardPlayer> scoreboardPlayerList;
     private UpdateScorePlayer updateScorePlayer;
     private ValidateLaunchAchievement validateLaunchAchievement;
@@ -11,25 +11,28 @@ public abstract class ScoreboardGameAbstract implements ScoreboardGame{
 
     public boolean applyCommand(TypeLaunchCommand typeLaunchCommand){
         if (validateLaunchAchievement.validateTypeLaunchCommand(this.typeLaunchCommandList,typeLaunchCommand)) {
-            boolean exist = false;
+            ScoreboardPlayer scoreboardPlayerSelect = null;
             for (ScoreboardPlayer scoreboardPlayer: scoreboardPlayerList                 ) {
                 if (typeLaunchCommand.getPlayerName().equals(scoreboardPlayer.getPlayerName())){
-                    createUpdatePlayerFrame.createFrame(scoreboardPlayer, typeLaunchCommand);
-                    updateScorePlayer.process(scoreboardPlayer);
-                    exist = true;
+                    scoreboardPlayerSelect = scoreboardPlayer;
                     break;
                 }
             }
-            if(!exist) {
-               addNewPlayer(typeLaunchCommand);
-            }
+            if(scoreboardPlayerSelect==null)
+                scoreboardPlayerSelect = new ScoreboardPlayer(typeLaunchCommand.getPlayerName(),0);
+
+            createUpdatePlayerFrame.createFrame(scoreboardPlayerSelect, typeLaunchCommand);
+            updateScorePlayer.process(scoreboardPlayerSelect);
         }else{ return false;}
+
+        typeLaunchCommandList.add(typeLaunchCommand);
         return true                ;
     }
-    public abstract void addNewPlayer(TypeLaunchCommand typeLaunchCommand);
+
     public void showResult(PrinterPlayerFrame printer){
         for (ScoreboardPlayer scoreboardPlayer: scoreboardPlayerList ){
             printer.printer(scoreboardPlayer);
         }
     }
+
 }

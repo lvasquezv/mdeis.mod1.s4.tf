@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScoreboardGame10 implements ScoreboardGame{
+public class ScoreboardGame10 extends ScoreboardGameAbstract{
     private List<ScoreboardPlayer> scoreboardPlayerList;
     private UpdateScorePlayer updateScorePlayer;
     private ValidateLaunchAchievement validateLaunchAchievement;
@@ -19,24 +19,6 @@ public class ScoreboardGame10 implements ScoreboardGame{
     }
 
 
-    public boolean applyCommand(TypeLaunchCommand typeLaunchCommand){
-        //this.typeLaunchCommandState = typeLaunchCommand;
-        boolean existe = false;
-        if (validateLaunchAchievement.validateTypeLaunchCommand(this.typeLaunchCommandList,typeLaunchCommand)) {
-            for (ScoreboardPlayer scoreboardPlayer: scoreboardPlayerList                 ) {
-                if (typeLaunchCommand.getPlayerName().equals(scoreboardPlayer.getPlayerName())){
-                    createUpdatePlayerFrame.createFrame(scoreboardPlayer, typeLaunchCommand);
-                    updateScorePlayer.process(scoreboardPlayer);
-                    break;
-                }
-            }
-        }else{ return false;}
-
-        return true;
-    }
-    public void showResult(){
-
-    }
 
 
 }
