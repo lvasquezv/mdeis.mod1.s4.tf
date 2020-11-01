@@ -5,8 +5,8 @@ public abstract class ScoreboardGameAbstract {
     private UpdateScorePlayer updateScorePlayer;
     private ValidateLaunchAchievement validateLaunchAchievement;
     private CreateUpdatePlayerFrame createUpdatePlayerFrame;
-    private TypeLaunchCommandState typeLaunchCommandState;
-    private LaunchCommandState launchCommandState;
+    //private TypeLaunchCommandState typeLaunchCommandState;
+    //private LaunchCommandState launchCommandState;
     private List<TypeLaunchCommand> typeLaunchCommandList;
 
     public boolean applyCommand(TypeLaunchCommand typeLaunchCommand){
@@ -29,7 +29,7 @@ public abstract class ScoreboardGameAbstract {
         return true                ;
     }
 
-    public void showResult(PrinterPlayerFrame printer){
+    public void showResultPlayers(PrinterPlayerFrame printer){
         for (ScoreboardPlayer scoreboardPlayer: scoreboardPlayerList ){
             printer.printer(scoreboardPlayer);
         }

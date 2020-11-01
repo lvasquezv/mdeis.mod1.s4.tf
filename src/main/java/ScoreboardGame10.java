@@ -6,8 +6,8 @@ public class ScoreboardGame10 extends ScoreboardGameAbstract{
     private UpdateScorePlayer updateScorePlayer;
     private ValidateLaunchAchievement validateLaunchAchievement;
     private CreateUpdatePlayerFrame createUpdatePlayerFrame;
-    private TypeLaunchCommandState typeLaunchCommandState;
-    private LaunchCommandState launchCommandState;
+    //private TypeLaunchCommandState typeLaunchCommandState;
+    //private LaunchCommandState launchCommandState;
     private List<TypeLaunchCommand> typeLaunchCommandList;
 
 
@@ -15,8 +15,10 @@ public class ScoreboardGame10 extends ScoreboardGameAbstract{
         this.scoreboardPlayerList = new ArrayList<ScoreboardPlayer>();
         this.updateScorePlayer = new UpdateScorePlayerGame10();
         this.validateLaunchAchievement = new ValidateLaunchAchievementGame10();
-        this.typeLaunchCommandState = new TypeLaunchCommandStateNewPlayer();
-        this.launchCommandState = new LaunchCommandStateGame10();
+        this.createUpdatePlayerFrame = new CreateUpdatePlayerFrameGame10();
+        //this.typeLaunchCommandState = new TypeLaunchCommandStateNewPlayer();
+        //this.launchCommandState = new LaunchCommandStateGame10();
+        this.typeLaunchCommandList = new ArrayList<TypeLaunchCommand>();
     }
 
 

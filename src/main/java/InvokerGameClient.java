@@ -18,7 +18,7 @@ public class InvokerGameClient {
          }
       }
       System.out.println("Comandos cargas satisfactoriamente:  ");
-      scoreboardGame.showResult(new PrinterPlayerFrameConsole());
+      scoreboardGame.showResultPlayers(new PrinterPlayerFrameConsole());
    }
 
    public List<TypeLaunchCommand> readCommands(String pathFileCommands){
